@@ -125,4 +125,4 @@ Hier kommt nun der Code für heute:
 
 Geben Sie das von Ihnen verfasste Tutorial für den obenstehenden Code mit Abbildungen als Word-Datei oder PDF ab. Sie haben dafür zwei Wochen Zeit. Dies ist auch gleichzeitig die letzte Hausaufgabe. Nächste Woche werden wir noch ein Tutorial mit einer kleinen Einführung in die Verarbeitung von Laserscanningdaten in R bearbeiten.
 
-Ab der darauffolgenden Woche können Sie die Übungen dafür verwenden an der finalen Abgabe zu arbeiten und Rückfragen zu stellen.
+Den letzten Übungstermin können Sie dafür verwenden an der finalen Abgabe zu arbeiten und Rückfragen diesbezüglich zu stellen.
