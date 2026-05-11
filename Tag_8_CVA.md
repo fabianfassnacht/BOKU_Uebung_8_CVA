@@ -11,6 +11,8 @@ Während diesem Tutorial werden Sie lernen wie man eine Change Vector Analyse in
 
 Die für dieses Tutorial benötigten Daten können Sie hier herunterladen:
 
+https://drive.google.com/drive/folders/1Jp8axKkdJJoBphA6hmRcWiRbJAJhocMO?usp=sharing
+
 Laden sie die gepackten Dateien sowie das geopackage-file herunter und kopieren und entpacken Sie sie in einen Ordner, den sie wieder finden können (unten im Code heisst dieser E:/Daten/). Die Daten umfassen Landsat-Daten von La Palma vor und nach dem Vulkanausbruch im Jahr 2021. Dazu ist noch ein gpkg-Layer enthalten, der die grobe Lage von La Palma wiederspiegelt.
 
 
