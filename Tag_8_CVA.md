@@ -11,16 +11,16 @@ Während diesem Tutorial werden Sie lernen wie man eine Change Vector Analyse in
 
 Die für dieses Tutorial benötigten Daten können Sie hier herunterladen:
 
-Laden sie die gepackte Datei herunter und entpacken Sie sie in einen Ordner, den sie wieder finden können.
+Laden sie die gepackten Dateien sowie das geopackage-file herunter und kopieren und entpacken Sie sie in einen Ordner, den sie wieder finden können (unten im Code heisst dieser E:/Daten/). Die Daten umfassen Landsat-Daten von La Palma vor und nach dem Vulkanausbruch im Jahr 2021. Dazu ist noch ein gpkg-Layer enthalten, der die grobe Lage von La Palma wiederspiegelt.
 
 
 ### Change Vector Analyse
 
 Unten finden Sie den gesamten Code für die Analyse des heutigen Tages. Kopieren Sie diesen nach RStudio und versuchen Sie den Code basierend auf den zur Verfügung gestellten Daten zum laufen zu bringen. 
 
-Sie sehen, dass an den meisten Code-Schnipsel eine # zu sehen ist, ohne das danach ein Erläuterung erfolgt. Die Aufgabe in diesem Tutorial ist es diese Erläuterungen selbst zu ergänzen.
+Sie sehen, dass an den meisten Code-Schnipsel eine **#** zu sehen ist, ohne das danach ein Erläuterung erfolgt. Die Aufgabe in diesem Tutorial ist es diese Erläuterungen selbst zu ergänzen.
 
-Ziel ist es am Schluss ein Tutorial zu haben, welches den Tutorials der vergangenen Wochen ähnelt. D.h., Sie sollen sowohl den Code kommentieren, als auch die entsprechenden Outputs mit Screenshots abspeichern.
+Ziel ist es am Schluss ein Tutorial zu haben, welches den Tutorials der vergangenen Wochen ähnelt. D.h., Sie sollen sowohl den Code kommentieren, als auch die entsprechenden Outputs mit Screenshots abspeichern und darauf Bezug nehmen.
 
 Bis auf die gegen Ende des Code-Skripts zu findende Change Vektor Analyse - Funktion **cva()** - sollten sie alle verwendeten Befehle und Funktionen bereits aus den früheren Tutorials kennen.
 
@@ -30,9 +30,11 @@ Im Zweifel nutzen Sie die früheren Tutorials und schauen Sie sich die Erläuter
 
 Die sollte dann die für diese Funktion zur Verfügung stehende Hilfedatei öffnen. 
 
-Hier kommt nun der Code für heute:
+Hier kommt nun der Code für heute, der die Grundlage des Tutorials darstellt:
 
-	# Dieser Schritt muss nur beim ersten mal durchgeführt werden, danach kann man diese zwei Zeilen löschen oder auskommentieren
+	# Dieser Schritt muss nur beim ersten mal durchgeführt werden, danach kann man diese drei Zeilen löschen oder auskommentieren
+	# Falls Sie gefragt werden, ob sie ein fehlendes Paket installieren wollen, bestätigen Sie dies bitte.
+	install.packages("devtools")
 	require(devtools)
 	install_github("bleutner/RStoolbox")
 
@@ -41,11 +43,11 @@ Hier kommt nun der Code für heute:
 	require(RStoolbox)
 
 	#
-	lapalma <- vect("E:/188_BOKU/02_Lehre/OEKB100130_Remote_Sensing_Landscape_Planning/02_Uebungen/Tag_8/la_palma.gpkg")
+	lapalma <- vect("E:/Daten/la_palma.gpkg")
 
 	#
-	bands_pre <- list.files("E:/188_BOKU/02_Lehre/OEKB100130_Remote_Sensing_Landscape_Planning/02_Uebungen/Tag_8/LS_pre_eruption/bands/", pattern=".TIF$", full.names = T)
-	bands_post <- list.files("E:/188_BOKU/02_Lehre/OEKB100130_Remote_Sensing_Landscape_Planning/02_Uebungen/Tag_8/LS_post_eruption/bands/", pattern=".TIF$", full.names = T)
+	bands_pre <- list.files("E:/Daten/LS_pre_eruption/bands/", pattern=".TIF$", full.names = T)
+	bands_post <- list.files("E:/Daten/LS_post_eruption/bands/", pattern=".TIF$", full.names = T)
 
 	#
 	ls_pre_big <- rast(bands_pre)
@@ -64,7 +66,7 @@ Hier kommt nun der Code für heute:
 	plotRGB(ls_post, r=3, g=2, b=1, stretch="lin")
 
 	#
-	setwd("E:/188_BOKU/02_Lehre/OEKB100130_Remote_Sensing_Landscape_Planning/02_Uebungen/Tag_8/")
+	setwd("E:/Daten/")
 
 	#
 	writeRaster(ls_pre, filename = "pre_eruption.tif", overwrite=T)
